@@ -5,11 +5,11 @@ use crate::prelude::*;
 #[derive(Debug, Deserialize)]
 #[allow(missing_docs)]
 pub struct SearchResult {
-    character: Option<Vec<u32>>,
-    constellation: Option<Vec<u32>>,
-    corporation: Option<Vec<u32>>,
-    solar_system: Option<Vec<u32>>,
-    station: Option<Vec<u32>>,
+    pub character: Option<Vec<u32>>,
+    pub constellation: Option<Vec<u32>>,
+    pub corporation: Option<Vec<u32>>,
+    pub solar_system: Option<Vec<u32>>,
+    pub station: Option<Vec<u32>>,
 }
 
 /// Endpoints for Search

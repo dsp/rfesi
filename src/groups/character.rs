@@ -8,9 +8,9 @@ pub struct CharacterGroup<'a> {
 #[derive(Debug, Deserialize)]
 #[allow(missing_docs)]
 pub struct CharacterPublicInfo {
-    pub alliance_id: u64,
-    pub ancestry_id: u16,
+    pub alliance_id: Option<u64>,
     pub birthday: String,
+    // pub bloodline_id: u16,
     pub corporation_id: u64,
     pub description: String,
     pub gender: String,
