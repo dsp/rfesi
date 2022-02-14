@@ -3,6 +3,7 @@
 use crate::prelude::*;
 use reqwest::{header, Client};
 use std::time::Duration;
+use std::collections::HashSet;
 
 /// Builder for the `Esi` struct.
 ///
@@ -44,7 +45,7 @@ pub struct EsiBuilder {
     pub(crate) client_id: Option<String>,
     pub(crate) client_secret: Option<String>,
     pub(crate) callback_url: Option<String>,
-    pub(crate) scope: Option<String>,
+    pub(crate) scopes: HashSet<String>,
     pub(crate) access_token: Option<String>,
     pub(crate) access_expiration: Option<u64>,
     pub(crate) refresh_token: Option<String>,
@@ -86,7 +87,7 @@ impl EsiBuilder {
 
     /// Set the scope.
     pub fn scope(mut self, val: &str) -> Self {
-        self.scope = Some(val.to_owned());
+        self.scopes.insert(val.to_owned());
         self
     }
 

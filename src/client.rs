@@ -91,12 +91,13 @@ impl Esi {
         let client = builder.construct_client()?;
         let version = builder.version.unwrap_or_else(|| "latest".to_owned());
         // let spec = Esi::get_spec(&client, &version).await?;
+        let scopes = builder.scopes.into_iter().collect::<Vec<_>>();
         let e = Esi {
             version,
             client_id: builder.client_id,
             client_secret: builder.client_secret,
             callback_url: builder.callback_url,
-            scope: builder.scope.unwrap_or_else(|| "".to_owned()),
+            scope: scopes.join(" "), //unwrap_or_else(|| "".to_owned()),
             access_token: builder.access_token,
             access_expiration: builder.access_expiration,
             refresh_token: builder.refresh_token,
