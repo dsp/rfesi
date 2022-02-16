@@ -8,7 +8,7 @@ pub struct CharacterGroup<'a> {
 #[derive(Debug, Serialize, Deserialize)]
 #[allow(missing_docs)]
 pub struct CharacterPublicInfo {
-    pub alliance_id: i32,
+    pub alliance_id: Option<i32>,
     //pub ancestry_id: u16,
     pub birthday: String,
     pub corporation_id: i32,

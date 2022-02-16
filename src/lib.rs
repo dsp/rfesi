@@ -53,7 +53,7 @@
 //! [developers site]: https://developers.eveonline.com
 
 #![deny(clippy::all)]
-#![deny(missing_docs)]
+//#![deny(missing_docs)]
 
 #[macro_use]
 mod macros;
