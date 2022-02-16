@@ -4,12 +4,17 @@ use crate::prelude::*;
 
 #[derive(Debug, Deserialize)]
 #[allow(missing_docs)]
-pub struct SearchResult {
-    pub character: Option<Vec<u32>>,
-    pub constellation: Option<Vec<u32>>,
-    pub corporation: Option<Vec<u32>>,
-    pub solar_system: Option<Vec<u32>>,
-    pub station: Option<Vec<u32>>,
+pub struct Search {
+    pub agent: Option<Vec<i32>>,
+    pub alliance: Option<Vec<i32>>,
+    pub constellation: Option<Vec<i32>>,
+    pub character: Option<Vec<i32>>,
+    pub corporation: Option<Vec<i32>>,
+    pub faction: Option<Vec<i32>>,
+    pub inventory_type: Option<Vec<i32>>,
+    pub region: Option<Vec<i32>>,
+    pub solar_system: Option<Vec<i32>>,
+    pub station: Option<Vec<i32>>,
 }
 
 /// Endpoints for Search
@@ -23,7 +28,8 @@ impl<'a> SearchGroup<'a> {
         get_search,
         "get_search",
         RequestType::Public,
-        SearchResult,;
+        Search,
+        ;
         (categories: &str) => "categories",
         (search: &str) => "search",
         (strict: bool) => "strict"
