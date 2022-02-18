@@ -97,7 +97,7 @@ impl Esi {
             client_id: builder.client_id,
             client_secret: builder.client_secret,
             callback_url: builder.callback_url,
-            scope: scopes.join(" "), //unwrap_or_else(|| "".to_owned()),
+            scope: scopes.join("%20"),
             access_token: builder.access_token,
             access_expiration: builder.access_expiration,
             refresh_token: builder.refresh_token,
